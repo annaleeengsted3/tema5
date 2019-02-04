@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+</head>
+
+
+
+
+
+
+<body>
+
+    <script>
+        //Programmet skal bede brugeren angive sin højde og vægt.
+        //For danske brugere vil det være bedst at opgive højden i cm.
+        //Programmet skal så udregne bmi’en, og fortælle brugeren resultatet
+        //Til sidst skal programmet spørge om brugeren vil have besked om sin vægtklasse, og kun hvis brugeren siger ja, skal vægtklassen oplyses
+        //Hvis brugeren ikke opgiver tal for højde og vægt, skal programmet give en fejlmelding.
+
+
+
+
+
+
+
+        let height = prompt("Angiv højde i cm");
+        let weight = prompt("Angiv vægt i kg");
+        //        let bmi = weight / ((height / 100) * (height / 100));
+        //        let resultat = `BMI'en er ${bmi}. Vil du vide din vægtklasse?`
+        let resultat2;
+
+
+
+
+        function bmi(weight, height) {
+
+
+
+            return (weight / ((height / 100) * (height / 100)));
+
+
+
+            if (isNaN(bmi(weight, height))) {
+                alert(`Fejl. Højde og bredde skal være tal.`);
+            }
+
+
+            //            if (isNaN(bmi(weight, height))) {
+            //                return (`Husk længde og bredde skal være tal. \n Prøv igen.`);
+            //            } else {
+            //                return (weight / ((height / 100) * (height / 100)));
+            //            }
+
+
+
+
+        }
+
+
+
+
+        if (bmi(weight, height) < 19) {
+            resultat2 = "Undervægtig";
+        } else if (bmi(weight, height) > 19 && bmi(weight, height) <= 25) {
+
+            resultat2 = "Normal";
+        } else if (bmi(weight, height) > 25 && bmi(weight, height) <= 30) {
+            resultat2 = "Overvægtig";
+        } else if (bmi(weight, height) > 30 && bmi(weight, height) <= 35) {
+            resultat2 = "Fed";
+        } else if (bmi(weight, height) > 35 && bmi(weight, height) <= 40) {
+            resultat2 = "Svær fedme";
+        } else {
+            resultat2 = "Ekstremt fed";
+        }
+
+
+        //Her skal værdien af funktionen BMI skrives helt ud bmi(weight, height);
+
+        let resultat = `BMI'en er ${bmi(weight, height)}. Vil du vide din vægtklasse?`
+
+
+        confirm(resultat);
+
+        if (confirm) {
+            alert(`Din vægtklasse er: ${resultat2}`);
+        }
+
+    </script>
+</body>
+
+</html>

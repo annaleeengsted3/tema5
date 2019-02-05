@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+    <style>
+        #firkant {
+            height: 200px;
+            width: 200px;
+            background-color: green;
+            text-align: center;
+
+
+        }
+
+        #cirkel {
+            height: 200px;
+            width: 200px;
+            border-radius: 50%;
+            background-color: red;
+            text-align: center;
+
+        }
+
+        h1 {
+            padding-top: 40%;
+        }
+
+        img {
+            padding-top: 30%;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div id="firkant"></div>
+
+    <br>
+
+
+    <div id="cirkel"></div>
+
+
+
+
+
+
+    <script>
+        let firkant = document.querySelector("#firkant");
+        let cirkel = document.querySelector("#cirkel");
+        let firkantURL = `http://helf-kea.dk/test/frog.png`;
+        let cirkelURL = `http://helf-kea.dk/test/gris.png`;
+        let toggleFrog = true;
+
+
+
+        document.addEventListener("DOMContentLoaded", start);
+
+        function start() {
+
+            firkant.innerHTML = `<img src=${firkantURL} alt="grøn frø">`;
+            cirkel.innerHTML = `<img src=${cirkelURL} alt="gris">`;
+
+            console.log("function start");
+
+            firkant.addEventListener("click", toggleFirkant);
+            cirkel.addEventListener("click", cirkelClick);
+
+
+        }
+
+
+        function toggleFirkant() {
+
+
+
+            if (toggleFrog == true) {
+                toggleFrog = false;
+                frogOff();
+            } else {
+                toggleFrog = true;
+                frogOn();
+            }
+
+        }
+
+
+        function frogOn() {
+
+            firkant.innerHTML = `<img src=${firkantURL} alt="grøn frø">`;
+            cirkel.innerHTML = `<img src=${cirkelURL} alt="gris">`;
+
+
+
+
+
+        }
+
+
+
+
+
+
+        function frogOff() {
+
+            firkant.innerHTML = `<img src=${cirkelURL} alt="gris">`;
+            cirkel.innerHTML = `<img src=${firkantURL} alt="grøn frø">`;
+
+        }
+
+
+        function cirkelClick() {
+
+            firkant.removeEventListener("click", toggleFirkant);
+
+            console.log("cirkelClick");
+
+        }
+    </script>
+</body>
+
+</html>
+
+<!--
+
+
+Arbejd videre på indholdet:
+Når der klikkes på den grønne firkant, skal de to dyr bytte plads
+Når der klikkes på den røde cirkel, skal
+den grønne firkant ikke længere kunne
+bruges til ombytninger.
+-->

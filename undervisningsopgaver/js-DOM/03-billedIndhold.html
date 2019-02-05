@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+    <style>
+        #firkant {
+            height: 200px;
+            width: 200px;
+            background-color: green;
+            text-align: center;
+
+
+        }
+
+        #cirkel {
+            height: 200px;
+            width: 200px;
+            border-radius: 50%;
+            background-color: red;
+            text-align: center;
+
+        }
+
+        h1 {
+            padding-top: 40%;
+        }
+
+        img {
+            padding-top: 30%;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div id="firkant"></div>
+
+    <br>
+
+
+    <div id="cirkel"></div>
+
+
+
+
+
+
+    <script>
+        let firkant = document.querySelector("#firkant");
+        let cirkel = document.querySelector("#cirkel");
+        let firkantURL = `http://helf-kea.dk/test/frog.png`;
+        let cirkelURL = `http://helf-kea.dk/test/gris.png`;
+
+        firkant.innerHTML = `<img src=${firkantURL} alt="grøn frø">`;
+        cirkel.innerHTML = `<img src=${cirkelURL} alt="gris">`;
+    </script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+<!--
+
+
+I body: læg et div-tag med id=”content”
+I div#content: læg tre div’er uden class eller id
+I den første: læg et link til keas hjemmeside,
+i den anden: læg et link til din github-side,
+i den tredje et billede af en frø
+(billedfil: http://helf-kea.dk/test/frog.png)
+Lav console.logs på hver af elementerne: #content,
+de tre div’s i #content , det to a-tags og img-tagget-->

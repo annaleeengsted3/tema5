@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+    <style>
+        #firkant {
+            height: 200px;
+            width: 200px;
+            background-color: green;
+            text-align: center;
+
+
+        }
+
+        #cirkel {
+            height: 200px;
+            width: 200px;
+            border-radius: 50%;
+            background-color: red;
+            text-align: center;
+
+        }
+
+        h1 {
+            padding-top: 40%;
+        }
+
+        img {
+            padding-top: 30%;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div id="firkant"></div>
+
+    <br>
+
+
+    <div id="cirkel"></div>
+
+
+
+
+
+
+    <script>
+        let firkant = document.querySelector("#firkant");
+        let cirkel = document.querySelector("#cirkel");
+        let firkantURL = `http://helf-kea.dk/test/frog.png`;
+        let cirkelURL = `http://helf-kea.dk/test/gris.png`;
+        //        let foxURL = `http://helf-kea.dk/test/fox.png`;
+
+        let img = document.createElement("img");
+
+
+
+        firkant.innerHTML = `<img src=${firkantURL} alt="grøn frø">`;
+        cirkel.innerHTML = `<img src=${cirkelURL} alt="gris">`;
+
+
+        img.src = "http://helf-kea.dk/test/fox.png";
+        cirkel.appendChild(img);
+    </script>
+</body>
+
+
+
+
+</html>
+
+<!--
+
+let h1 = document.createElement("h1");
+let overskrift = document.createTextNode("Min overskrift til info");
+h1.appendChild(overskrift);
+let img = document.createElement("img");
+img.src="http://helf-kea.dk/test/gris.png";
+info.appendChild(h1);
+info.appendChild(img);
+-->
+
+
+
+

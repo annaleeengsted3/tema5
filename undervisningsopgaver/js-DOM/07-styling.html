@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+    <style>
+        body {
+            position: relative;
+        }
+
+        #firkant {
+            height: 200px;
+            width: 200px;
+            background-color: green;
+            text-align: center;
+            /*            position: absolute;*/
+
+
+
+        }
+
+        #cirkel {
+            height: 200px;
+            width: 200px;
+            border-radius: 50%;
+            background-color: red;
+            text-align: center;
+
+
+        }
+
+        h1 {
+            padding-top: 40%;
+        }
+
+        img {
+            padding-top: 30%;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div id="firkant"></div>
+
+    <br>
+
+
+    <div id="cirkel"></div>
+
+
+
+
+
+
+    <script>
+        let firkant = document.querySelector("#firkant");
+        let cirkel = document.querySelector("#cirkel");
+        let firkantURL = `http://helf-kea.dk/test/frog.png`;
+        let cirkelURL = `http://helf-kea.dk/test/gris.png`;
+        let toggleFrog = true;
+
+
+
+        document.addEventListener("DOMContentLoaded", start);
+
+        function start() {
+
+            firkant.innerHTML = `<img src=${firkantURL} alt="grøn frø">`;
+            cirkel.innerHTML = `<img src=${cirkelURL} alt="gris">`;
+
+            console.log("function start");
+
+            firkant.addEventListener("click", clickFirkant);
+            cirkel.addEventListener("click", cirkelClick);
+
+
+        }
+
+
+
+
+        function clickFirkant() {
+
+
+            firkant.style.position = "absolute";
+            cirkel.style.position = "absolute";
+
+            //            firkant.innerHTML = `<img src=${firkantURL} alt="grøn frø">`;
+            //            cirkel.innerHTML = `<img src=${cirkelURL} alt="gris">`;
+
+
+
+
+
+        }
+
+
+
+
+        function cirkelClick() {
+
+            firkant.style.position = "static";
+            cirkel.style.position = "static";
+
+            console.log("cirkelClick");
+
+        }
+    </script>
+</body>
+
+</html>
+
+
+
+<!--
+Ved klik på firkanten, skal cirklen hoppe op ovenpå den.
+Når man klikker på cirklen, skal den springe tilbage.
+
+Nyttige css-regler:
+position: absolute;
+top:0;
+position:static;
+-->

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>js-oevelse-1</title>
+    <style>
+        body {
+            color: burlywood;
+        }
+
+        #display {
+            width: 20vw;
+            height: 20vw;
+            border: 1px solid silver;
+            margin: 7vw;
+            padding: 1vw;
+        }
+
+        /*********************/
+    </style>
+
+</head>
+
+<body>
+    <div id="display"></div>
+
+    <script>
+        //lav en array: i brackets separeret med komma
+        let playlist = ["Adeline", "Tesselate", "Bloodflood", "Matilda", "The Suburbs", "Hunger of the Pine", "Deadcrush", "Petricor", "Notion", "Big Jet Plane"];
+
+        //Hvis jeg vil vise dem i #display, skal jeg loope igennem en array hvis jeg skal have hver enkelt enhed til at gøre noget bestemt
+
+        playlist.forEach(sang => {
+
+            //Her vil jeg selecte #display og ændre dens inner HTML:
+            document.querySelector("#display").innerHTML += `${sang} <br>`;
+        });
+    </script>
+</body>
+
+</html>

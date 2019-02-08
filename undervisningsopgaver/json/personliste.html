@@ -20,12 +20,16 @@
         #liste {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            background-color: #a0ada0;
+            background-color: #8b9d8b;
             margin: 0 10vw;
         }
 
         img {
             max-width: 200px;
+        }
+
+        body {
+            background-color: #bcbbb5;
         }
     </style>
 </head>
@@ -44,7 +48,6 @@
 
         document.addEventListener("DOMContentLoaded", start);
 
-
         function start() {
             console.log("start");
             let dest = document.querySelector("#liste");
@@ -60,11 +63,7 @@
 
             // let jsonData = await fetch("dyr.json");
 
-            //Her skal du skrive hele url'en på den konverterede "spreadsheet til JSON" fil
-
-
-
-            //HUSK INGEN KOMMA EFTER DET SIDSTE ARRAY I DIN JSON FIL
+            //Her skal du skrive hele url'en på den konverterede "spreadsheet til JSON" fil:
 
             function visPersoner() {
                 allePersoner.forEach(person => {

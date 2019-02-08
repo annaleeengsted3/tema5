@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+
+    <style>
+        .dyrcontainer {
+            border: solid black 2px;
+        }
+
+
+        #liste {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        }
+
+    </style>
+</head>
+
+<body>
+
+
+    <div id="liste"></div>
+
+
+    <script>
+        let alleDyr = [];
+
+
+        document.addEventListener("DOMContentLoaded", start);
+
+
+        function start() {
+            console.log("start");
+            let dest = document.querySelector("#liste");
+
+            async function getJson() {
+                let jsonData = await fetch("dyr.json");
+                alleDyr = await jsonData.json();
+                visDyr();
+            }
+
+
+            //HUSK INGEN KOMMA EFTER DET SIDSTE ARRAY I DIN JSON FIL
+
+            function visDyr() {
+                alleDyr.forEach(dyr => {
+                    dest.innerHTML += `
+                        <div class = "dyrcontainer">
+                        <h2>${dyr.navn}</h2>
+<img src = "${dyr.billede}" alt = "${dyr.navn}"><br>
+                        <p>Type: ${dyr.type}</p>
+                    <p>Levested: ${dyr.levested}</p>
+                        </div>
+`;
+                });
+            }
+
+            //          visDyr();
+            getJson();
+        }
+
+    </script>
+</body>
+
+</html>

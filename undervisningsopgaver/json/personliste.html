@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+
+    <style>
+        .container {
+            border: black 1px;
+            border-style: dashed;
+            padding: 0 5% 0;
+            text-decoration: underline;
+            font-family: sans-serif;
+        }
+
+
+        #liste {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            background-color: #a0ada0;
+            margin: 0 10vw;
+        }
+
+        img {
+            max-width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div id="liste"></div>
+
+
+
+
+    <script>
+        let allePersoner = [];
+
+
+        document.addEventListener("DOMContentLoaded", start);
+
+
+        function start() {
+            console.log("start");
+            let dest = document.querySelector("#liste");
+
+            async function getJson() {
+                let jsonData = await fetch("https://mandalskeawebspace.dk/claude_php/clean_up_spreadsheet.php?id=1OLlD_GRoz71piHvnW306omRAyHS7vtLOILQt-K0YF_c");
+                allePersoner = await jsonData.json();
+                visPersoner();
+            }
+
+
+
+
+            // let jsonData = await fetch("dyr.json");
+
+            //Her skal du skrive hele url'en på den konverterede "spreadsheet til JSON" fil
+
+
+
+            //HUSK INGEN KOMMA EFTER DET SIDSTE ARRAY I DIN JSON FIL
+
+            function visPersoner() {
+                allePersoner.forEach(person => {
+                    dest.innerHTML += `
+                        <div class = "container">
+                        <h2>${person.navn}</h2>
+<img src = "${person.billede}" alt = "${person.navn}"><br>
+                      <p><a href="https://github.com/${person.github}">https://github.com/${person.github}</a></p>
+                        </div>
+`;
+                });
+            }
+
+            //          visDyr();
+            getJson();
+        }
+    </script>
+</body>
+
+</html>

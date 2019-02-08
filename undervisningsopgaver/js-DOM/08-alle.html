@@ -48,6 +48,7 @@
 
 
         function start() {
+
             console.log("start");
 
             alleP.forEach(elm => {
@@ -83,10 +84,14 @@
 
             //Husk at spørge: Hvorfor forEach her? Kunne jeg ikke bare selecte button?
 
-            document.querySelectorAll("button").forEach(elm => {
-                elm.addEventListener("click", reset);
+            //            document.querySelectorAll("button").forEach(elm => {
+            //                elm.addEventListener("click", reset);
+            //
+            //            });
 
-            });
+
+            document.querySelector("button").addEventListener("click", reset);
+
 
 
             function reset() {
